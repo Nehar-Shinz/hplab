@@ -1,0 +1,22 @@
+Q2:
+
+1:
+put 'moviestars', 'row2', 'professionaldetail:'filmtype', 'mass'
+put 'moviestars', 'row2', 'professionaldetail:'filmtype', 'mass'
+
+2:
+get 'moviestars','row2',{COLUMN=>'professionaldetail:filmtype',VERSIONS=>3}
+
+3:
+get 'moviestars','row4',{COLUMN=>'professionaldetail:countoffilms'}
+
+4:
+delete 'moviestars','row3', 'personaldetail:age'
+get 'moviestars','row3'
+
+5:
+delete 'moviestars','row1'
+scan 'moviestars' 
+
+
+
