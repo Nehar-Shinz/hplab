@@ -1,0 +1,36 @@
+Q1:
+gedit ipl
+MI is my favourite ipl team. MI won many ipl titles.(Save)
+hadoop fs –put ipl /user/cloudera
+hadoop jar /usr/lib/hadoop-0.20-mapreduce/hadoop-examples-2.0.0-mr1-cdh4.4.0.jar wordcount /user/cloudera/ipl /user/cloudera/iplout
+sudo –u hdfs hdfs dfsadmin –safemode leave(if above line doesnt work try this and above one again)
+hadoop fs –cat /user/cloudera/iplout/p*
+
+
+q2:
+new terminal:
+sudo service mysqld start
+mysql –u root
+create database myhosdbdb;
+use myhosdbdb;
+create table pat(name text, illness text);
+insert into pat values ('adam','dengue'), ('brian','fever'), ('charlie','dengue');
+create table docs(name text, age int);
+insert into docs values ('alan',38), ('benny','28'), ('coby','55'); 
+
+new terminal:
+sqoop import --connect "jdbc:mysql://localhost/myhosdbdb" --username root --table pat --where "illness='dengue'" --target-dir /user/cloudera/docout –m 1
+hadoop fs -cat /user/cloudera/docout/part*
+sqoop eval --connect "jdbc:mysql://localhost/myhosdbdb" --username root --query "select * from docs"
+sqoop eval --connect "jdbc:mysql://localhost/myhosdbdb" --username root --query "delete * from docs where name='alan'"
+sqoop eval --connect "jdbc:mysql://localhost/myhosdbdb" --username root --query "select * from docs"
+
+
+
+
+
+
+
+
+
+
