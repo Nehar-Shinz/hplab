@@ -1,0 +1,33 @@
+Q1:
+new terminal:
+hbase shell
+create 'moviestars', 'personaldetail', 'professionaldetail'
+
+put 'moviestars', 'row1', 'personaldetail:name', 'sharukh'
+put 'moviestars', 'row1', 'personaldetail:age', '47'
+put 'moviestars', 'row1', 'personaldetail:place birth', 'delhi'
+put 'moviestars', 'row1', 'professionaldetail:'filmtype', 'romantic'
+put 'moviestars', 'row1', 'professionaldetail:'countoffilms', '90' 
+
+put 'moviestars', 'row2', 'personaldetail:name', 'salman'
+put 'moviestars', 'row2', 'personaldetail:age', '45'
+put 'moviestars', 'row2', 'personaldetail:place birth', 'mumbai'
+put 'moviestars', 'row2', 'professionaldetail:'filmtype', 'mass'
+put 'moviestars', 'row2', 'professionaldetail:'countoffilms', '88' 
+
+put 'moviestars', 'row3', 'personaldetail:name', 'akshay'
+put 'moviestars', 'row3', 'personaldetail:age', '42'
+put 'moviestars', 'row3', 'personaldetail:place birth', 'jalandar'
+put 'moviestars', 'row3', 'professionaldetail:'filmtype', 'action'
+put 'moviestars', 'row3', 'professionaldetail:'countoffilms', '70' 
+
+put 'moviestars', 'row4', 'personaldetail:name', 'aliya'
+put 'moviestars', 'row4', 'personaldetail:age', '26'
+put 'moviestars', 'row4', 'personaldetail:place birth', 'lucknow'
+put 'moviestars', 'row4', 'professionaldetail:'filmtype', 'classic'
+put 'moviestars', 'row4', 'professionaldetail:'countoffilms', '25' 
+
+scan 'moviestars' 
+
+                                                      
+
